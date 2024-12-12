@@ -57,6 +57,13 @@ function gameEngine(){
 
     if(snakeArr[0].y === food.y && snakeArr[0].x === food.x){
         foodSound.play();
+        score += 1;
+        if(score > highscoreval){
+            highscoreval = score;
+            localStorage.setItem("highscore",JSON.stringify(highscoreval));
+            HighScore.innerHTML = "HiScore : "+highscoreval;
+        }
+        document.getElementById('score').innerHTML = "Score : " + score ; 
         snakeArr.unshift({x:snakeArr[0].x + inputDir.x , y:snakeArr[0].y + inputDir.y});
         let a = 2 ; 
         let b = 16 ; 
@@ -115,6 +122,15 @@ function gameEngine(){
 // Main logic starts from here
 
 
+let highscore = localStorage.getItem("highscore");
+if(highscore === null){
+    let highscoreval = 0 
+    localStorage.setItem("highscore",JSON.stringify(highscoreval));
+}
+else{
+    highscoreval = JSON.parse(highscore);
+    HighScore.innerHTML="HighScore : " + highscore ; 
+}
 window.requestAnimationFrame(main);
 window.addEventListener('keydown',e=>{
     inputDir = {x:0,y:1}; // Start the game 
