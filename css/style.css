@@ -24,11 +24,23 @@
 }
 
 .head{
-    background-color: red;
+    background : red;
+    border: 2px solid purple;
+    border-radius: 50%;
+
 
 }
 
+.snake{
+    background-color:purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+
 .food{
-    background-color: purple;
+    background : linear-gradient(red,purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+    
 }
 
