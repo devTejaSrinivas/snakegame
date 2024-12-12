@@ -27,14 +27,12 @@
     background : red;
     border: 2px solid purple;
     border-radius: 50%;
-
-
 }
 
 .snake{
     background-color:purple;
     border: .25vmin solid white;
-    border-radius: 12px;
+    border-radius: 50%;
 }
 
 .food{
